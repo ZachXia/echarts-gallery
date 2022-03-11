@@ -1,10 +1,11 @@
 var data = [
   {name: '某某市', value: [119.5313, 29.8773, 400]},
-  {name: '某某市', value: [110.5313, 36.8773, 400]},
   {name: '某某市', value: [125.5313, 44.8773, 150]},
   {name: '某某市', value: [92.5313, 40.8773, 300]},
   {name: '某某市', value: [100.5313, 28.8773, 200]},
-  {name: '某某市', value: [108.5313, 32.8773, 250]},
+  {name: '某某市', value: [-109, 41, 250]},
+  {name: '某某市', value: [-56, -26, 300]},
+  {name: '某某市', value: [47, -16, 100]},
 ]
 
 var option = {
@@ -16,10 +17,10 @@ var option = {
 
   geo: {
     show: true,
-    map: 'china',
+    map: 'world',
     roam: false,
     zoom: 1,
-    center: [104, 36],
+    center: [10, 10],
     label: {
       emphasis: {
         show: false
@@ -48,10 +49,11 @@ var option = {
     {
       type: 'effectScatter',
       coordinateSystem: 'geo',
-      data: this.data,
+      data: data,
       symbolSize: val => val[2] / 10,
       showEffectOn: 'render',
       rippleEffect: {
+        color: '#1890ff',
         brushType: 'stroke'
       },
       hoverAnimation: true,
@@ -66,7 +68,8 @@ var option = {
         normal: {
           color: '#1890ff',
           shadowBlur: 10,
-          shadowColor: '#1890ff'
+          shadowColor: '#1890ff',
+          opacity: .2
         }
       },
       zlevel: 1

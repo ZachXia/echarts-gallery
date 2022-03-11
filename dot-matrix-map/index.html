@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dot Matrix Map</title>
   <script src="./libs/echarts.min.js"></script>
+  <script src="./libs/world.js"></script>
   <style>
     html, body, #chart {
       width: 100%;
@@ -20,13 +21,7 @@
   <script src="./option.js"></script>
   <script>
     var myChart = echarts.init(document.getElementById('chart'));
-    fetch('./libs/geoJson.json')
-    .then(res => res.json())
-    .then(geoJson => {
-      echarts.registerMap('china', geoJson);
-      myChart.setOption(option);
-    })
-    
+    myChart.setOption(option);
   </script>
 </body>
 </html>
